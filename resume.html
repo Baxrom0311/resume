@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakhrom Reyimberganov — Full-Stack &amp; IoT Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181d;
+    --ink-soft:#6b7079;
+    --rule:#d9dbdf;
+    --accent:#a4142c;
+    --paper:#ffffff;
+    --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+    --meta-col:7.4rem;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:#eceef1;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:10.2pt;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ── Screen-only helper bar ───────────────────────────── */
+  .helper{
+    max-width:210mm;
+    margin:24px auto 12px;
+    padding:14px 18px;
+    background:var(--ink);
+    color:#fff;
+    border-radius:6px;
+    font-family:var(--mono);
+    font-size:12px;
+    line-height:1.6;
+  }
+  .helper b{color:#9fb6ff;font-weight:500}
+  .helper kbd{
+    font:inherit;background:#33363d;border-radius:3px;
+    padding:1px 6px;
+  }
+
+  /* ── The sheet ────────────────────────────────────────── */
+  .topbar{
+    height:3.5px;
+    background:var(--accent);
+    margin-bottom:9mm;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .sheet{
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto 40px;
+    padding:15mm 16mm 14mm;
+    background:var(--paper);
+    box-shadow:0 2px 18px rgba(20,24,35,.14);
+  }
+
+  /* ── Masthead ─────────────────────────────────────────── */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:2rem;
+    padding-bottom:.7rem;
+    border-bottom:1.5px solid var(--ink);
+  }
+  .name{
+    font-size:25pt;
+    font-weight:600;
+    letter-spacing:-.022em;
+    line-height:1.02;
+    margin:0;
+  }
+  .role{
+    font-family:var(--mono);
+    font-size:10pt;
+    font-weight:500;
+    color:var(--accent);
+    margin:.32rem 0 0;
+    letter-spacing:-.01em;
+  }
+  .contact{
+    font-family:var(--mono);
+    font-size:8.6pt;
+    line-height:1.72;
+    text-align:right;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .contact a:hover{border-color:var(--accent);color:var(--accent)}
+
+  .summary{
+    margin:.85rem 0 0;
+    max-width:64ch;
+    color:#33373f;
+  }
+
+  /* ── Sections ─────────────────────────────────────────── */
+  section{margin-top:1.3rem}
+  h2{
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+    font-size:10.5pt;
+    font-weight:600;
+    letter-spacing:-.01em;
+    margin:0 0 .62rem;
+  }
+  h2{break-after:avoid;page-break-after:avoid}
+  h2::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg,var(--accent) 0 26px,var(--rule) 26px);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ── Two-track row: mono spine + content ──────────────── */
+  .row{
+    display:grid;
+    grid-template-columns:var(--meta-col) 1fr;
+    gap:0 1.3rem;
+    margin-bottom:.8rem;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .row:last-child{margin-bottom:0}
+  .meta{
+    font-family:var(--mono);
+    font-size:8.4pt;
+    color:var(--ink-soft);
+    line-height:1.55;
+    padding-top:.12rem;
+  }
+  .meta .place{display:block;margin-top:.18rem}
+
+  .title{
+    font-size:10.6pt;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .title a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+  .title a:hover{color:var(--accent);border-color:var(--accent)}
+  .org{
+    font-size:9.6pt;
+    color:var(--ink-soft);
+    margin:.05rem 0 .3rem;
+  }
+  .desc{
+    margin:.14rem 0 0;
+    max-width:74ch;
+    color:#33373f;
+  }
+  ul{margin:.25rem 0 0;padding-left:1.05rem}
+  li{margin-bottom:.16rem;max-width:74ch}
+  li::marker{color:var(--accent)}
+  li b{font-weight:600}
+  .stack{
+    font-family:var(--mono);
+    font-size:8pt;
+    color:var(--ink-soft);
+    margin-top:.32rem;
+    max-width:74ch;
+  }
+
+  /* ── Skills ───────────────────────────────────────────── */
+  .skills{display:grid;grid-template-columns:var(--meta-col) 1fr;gap:.34rem 1.3rem}
+  .skills dt{
+    font-family:var(--mono);
+    font-size:8.4pt;
+    color:var(--ink-soft);
+    padding-top:.06rem;
+  }
+  .skills dd{margin:0;font-size:9.7pt}
+
+  /* ── Print ────────────────────────────────────────────── */
+  @page{size:A4;margin:11mm 12mm}
+  @media print{
+    body{background:#fff;font-size:9.25pt;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .topbar{margin-bottom:6mm}
+    .helper{display:none !important}
+    .sheet{
+      width:auto;min-height:0;margin:0;padding:0;
+      box-shadow:none;
+    }
+    a{color:inherit !important}
+    .contact a{border:none}
+    :root{--meta-col:5.6rem}
+  }
+
+  /* ── Small screens ────────────────────────────────────── */
+  @media screen and (max-width:760px){
+    .sheet{width:auto;margin:0 12px 24px;padding:22px 18px}
+    .helper{margin:16px 12px 10px}
+    header{flex-direction:column;align-items:flex-start;gap:.6rem}
+    .contact{text-align:left;white-space:normal}
+    .row,.skills{grid-template-columns:1fr;gap:.2rem}
+    .meta{padding-top:0;margin-bottom:.15rem}
+    .meta .place{display:inline;margin-left:.5rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="helper">
+  <b>PDF qilish:</b> <kbd>Cmd</kbd>+<kbd>P</kbd> &rarr; Destination: <b>Save as PDF</b> &rarr; Margins: <b>None</b> &rarr; Background graphics: <b>off</b>.<br>
+  <b>Tahrirlash:</b> shu faylning HTML qismini oching, matnni almashtiring. Bu qora quti chop etilmaydi.<br>
+  <b>To'ldirish kerak:</b> familiya, email, Experience bo'limi, Education sanalari.
+</div>
+
+<div class="sheet">
+
+  <div class="topbar"></div>
+
+  <header>
+    <div>
+      <h1 class="name">Bakhrom Reyimberganov</h1>
+      <p class="role">Full-Stack &amp; IoT Engineer</p>
+    </div>
+    <div class="contact">
+      <a href="mailto:bahromreyimberganov0311@gmail.com">bahromreyimberganov0311@gmail.com</a><br>
+      +998 93 558 03 11<br>
+      <a href="https://boos.uz/">boos.uz</a><br>
+      <a href="https://github.com/Baxrom0311">github.com/Baxrom0311</a><br>
+      Uzbekistan &nbsp;·&nbsp; open to remote
+    </div>
+  </header>
+
+  <p class="summary">
+    Engineer who builds the whole path from sensor to dashboard — ESP32 firmware in C++, async
+    FastAPI services on PostgreSQL, and React, Electron or Android clients on top. Most of my work
+    is production systems for utilities, agriculture and campus infrastructure.
+  </p>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="row">
+      <div class="meta">
+        2024 — now
+        <span class="place">Uzbekistan / remote</span>
+      </div>
+      <div>
+        <p class="title">Independent Software Engineer</p>
+        <p class="org">Self-employed — production systems for industrial and health clients</p>
+        <ul>
+          <li><b>Ugaz ARM</b> — operator workstation and central server for CNG filling stations,
+              in C#/.NET over EF Core and PostgreSQL. Three dispenser drivers behind one interface,
+              including a simulator that makes the system testable without hardware.</li>
+          <li><b>TE71 Meter Monitor</b> (Toshelectroapparat) — one async FastAPI backend covering
+              electricity, water and gas. ESP32 meters post behind per-device tokens; firmware ships
+              as OTA batch rollouts.</li>
+          <li><b>EX518 DLMS tester</b> — Python tool speaking DLMS/COSEM over USB-RS485 to Holley
+              three-phase meters, reading registers and driving relay disconnect.</li>
+          <li><b>SADO</b> — speech-therapy platform on async FastAPI, Celery and MinIO, running
+              Whisper transcription into an XGBoost risk classifier.</li>
+          <li><b>ECO COMPANY</b> — FastAPI site backend with JWT auth, a DeepSeek chatbot over
+              FastMCP and Telegram admin alerts.</li>
+        </ul>
+        <p class="stack">C# · .NET · Python · FastAPI · PostgreSQL · ESP32 · Celery · Docker</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Selected projects</h2>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title"><a href="https://github.com/uni-nav">Uni-Nav — indoor campus navigation</a></p>
+        <p class="desc">Wayfinding system for university buildings, built on one API with four
+          clients: web, Electron kiosk and an offline Android app. Buildings are modelled as a graph
+          and routed with A*, including transitions between floors.</p>
+        <p class="stack">Python · FastAPI · PostgreSQL · TypeScript · React · Electron · Kotlin</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title"><a href="https://github.com/Baxrom0311/wmax">WMAX — remote patient monitoring</a></p>
+        <p class="desc">Early-warning system for discharged patients, built for the National AI
+          Hackathon in Khorezm. A smartwatch streams vitals to the backend, which compares them
+          against each patient's own circadian baseline rather than a fixed threshold.</p>
+        <p class="stack">Python · FastAPI · PostgreSQL · React · Kotlin · Flutter · Wear OS</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title"><a href="https://analyst-omega-red.vercel.app/">AI Art Evaluation System</a></p>
+        <p class="desc">Web app that scores artwork across five weighted categories using Gemini and
+          returns per-category feedback. Live at analyst-omega-red.vercel.app.</p>
+        <p class="stack">Python · Django REST · PostgreSQL · TypeScript · React · Gemini API</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title"><a href="https://github.com/Baxrom0311/ghouse_iot">Smart Greenhouse</a></p>
+        <p class="desc">Climate and irrigation controller that drives pumps, fan and lighting from
+          per-sensor thresholds. The MQTT topic contract was published first, so the backend and
+          dashboard were built against a fixed interface.</p>
+        <p class="stack">C++ · ESP32 · MQTT · Python · FastAPI · TypeScript</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title"><a href="https://github.com/Baxrom0311/mininet_test">Network traffic simulator</a></p>
+        <p class="desc">SDN testbed that generates labelled network datasets for machine learning —
+          four topologies, eleven routing schemes, and eight attack patterns on a daily load curve.</p>
+        <p class="stack">Python · Mininet · Open vSwitch · SDN · Docker</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Technical skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt>
+      <dd>Python, TypeScript, C / C++, Kotlin, Dart, SQL</dd>
+
+      <dt>Backend</dt>
+      <dd>FastAPI, Django REST, async SQLAlchemy, PostgreSQL, WebSocket, MQTT, JWT auth, Docker Compose, CI</dd>
+
+      <dt>Frontend</dt>
+      <dd>React, Vite, Tailwind, shadcn/ui, react-query, Recharts, Fabric.js, PWA</dd>
+
+      <dt>Mobile</dt>
+      <dd>Flutter, Jetpack Compose, Wear OS, Electron, SQLite</dd>
+
+      <dt>Embedded</dt>
+      <dd>ESP32, Arduino-ESP32, PlatformIO, RS-485, ADC sensors, TFT_eSPI, OTA updates</dd>
+
+      <dt>Also</dt>
+      <dd>Gemini API, LLM agent orchestration, A* pathfinding, Mininet / SDN, Asterisk PBX, Sentry</dd>
+
+      <dt>Spoken</dt>
+      <dd>Uzbek (native), English (B1), Russian (B1)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="row">
+      <div class="meta">
+        2023 — 2027
+        <span class="place">expected</span>
+      </div>
+      <div>
+        <p class="title">BSc, Software Engineering</p>
+        <p class="org">Urgench State University — transferred in 2025 from Tashkent University of
+           Information Technologies when its regional branch closed</p>
+        <p class="stack">Academic projects: campus IP telephony on Asterisk PBX (extensions, IVR,
+           ring groups, Docker Compose) · clinical decision support for bronchial asthma (rule engine
+           + baseline ML with a structured explanation layer)</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2021 — 2023</div>
+      <div>
+        <p class="title">Academic Lyceum</p>
+        <p class="org">Urgench State University</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Competitions</h2>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title">ICPC — semifinalist</p>
+        <p class="org">International Collegiate Programming Contest</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title">13th of 60 teams — AI Healthcare Hackathon, CAU</p>
+        <p class="org">Team entry — medical image classification and segmentation in PyTorch, served
+           through Streamlit</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2026</div>
+      <div>
+        <p class="title">Best Agro Project — A500 Hackathon</p>
+        <p class="org"><a href="https://github.com/Baxrom0311/agriguard-ai">AgriGuard AI</a> — detects crop
+           pests and targets them with directed UV light instead of chemicals</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">2023</div>
+      <div>
+        <p class="title">Two bronze medals — OMOUS</p>
+        <p class="org">Open Mathematical Olympiad among University Students, Turkmenistan</p>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+</body>
+</html>
